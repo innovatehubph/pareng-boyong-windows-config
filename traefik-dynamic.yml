@@ -1,0 +1,15 @@
+http:
+  routers:
+    pareng-boyong:
+      rule: "Host(`win-ai.innovatehub.site`)"
+      service: pareng-boyong-service
+      entryPoints:
+        - websecure
+      tls:
+        certResolver: letsencrypt
+
+  services:
+    pareng-boyong-service:
+      loadBalancer:
+        servers:
+          - url: "http://host.docker.internal:5000"

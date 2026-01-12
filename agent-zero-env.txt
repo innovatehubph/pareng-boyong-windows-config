@@ -1,0 +1,54 @@
+# Agent Zero Environment Configuration 
+# Created: 2026-01-12 
+ 
+# ===== AI Provider API Keys ===== 
+# You can use multiple providers. Configure the ones you have access to. 
+ 
+# Anthropic (Claude) 
+API_KEY_ANTHROPIC=your-anthropic-api-key-here 
+ 
+# OpenAI (GPT models) 
+API_KEY_OPENAI=your-openai-api-key-here 
+ 
+# Google (Gemini) 
+API_KEY_GOOGLE=your-google-api-key-here 
+ 
+# Groq (Fast inference) 
+API_KEY_GROQ=your-groq-api-key-here 
+ 
+# Mistral AI 
+API_KEY_MISTRAL=your-mistral-api-key-here 
+ 
+# OpenRouter (Multiple models) 
+API_KEY_OPENROUTER=your-openrouter-api-key-here 
+ 
+# Azure OpenAI (if using Azure) 
+API_KEY_AZURE=your-azure-api-key-here 
+ 
+# ===== Ollama Configuration (Local Models) ===== 
+# If using Ollama, set the base URL 
+OLLAMA_API_BASE=http://localhost:11434 
+ 
+# ===== Other Settings =====
+# Add any other environment variables here
+
+# Working Directory Configuration
+# Default working directory for Pareng Boyong agent operations
+WORK_DIR=D:/
+
+# Web UI Configuration
+# Host: 0.0.0.0 makes it accessible from all network interfaces
+# Port: 5000 - nginx reverse proxy forwards port 80 to this
+WEB_UI_HOST=0.0.0.0
+WEB_UI_PORT=5000
+
+# Authentication Configuration
+# Set credentials for web UI login
+# IMPORTANT: Leave these empty to disable authentication (no login required)
+# Or set them to enable login protection
+AUTH_LOGIN=admin
+AUTH_PASSWORD=innovatehub2026
+
+A0_PERSISTENT_RUNTIME_ID=c23e57e6279863726dffb6c2789673db
+
+DEFAULT_USER_UTC_OFFSET_MINUTES=0
