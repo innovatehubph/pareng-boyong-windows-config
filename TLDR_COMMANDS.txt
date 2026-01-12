@@ -1,0 +1,45 @@
+═══════════════════════════════════════════════════════════════
+  TL;DR - QUICK DEPLOYMENT COMMANDS (Copy & Paste These)
+═══════════════════════════════════════════════════════════════
+
+# Step 1: Add CORS to .env file
+notepad D:\Boyong\agent-zero\.env
+# ADD THIS LINE: ALLOWED_ORIGINS=*://localhost:*,*://127.0.0.1:*,*://0.0.0.0:*,https://win-ai.innovatehub.site,http://win-ai.innovatehub.site
+# SAVE & CLOSE
+
+# Step 2: Start Pareng Boyong (if not running)
+cd D:\Boyong\agent-zero
+python run_ui.py
+# KEEP RUNNING - Open new PowerShell for next steps
+
+# Step 3: Create Docker network
+docker network create traefik
+
+# Step 4: Prepare SSL directory
+cd D:\Boyong\traefik
+New-Item -ItemType Directory -Path .\letsencrypt -Force
+New-Item -ItemType File -Path .\letsencrypt\acme.json -Force
+
+# Step 5: Start Traefik
+docker-compose up -d
+
+# Step 6: Check status
+docker ps
+docker logs traefik
+
+# Step 7: Test
+curl http://localhost:5000
+
+# Step 8: Visit in browser
+https://win-ai.innovatehub.site
+
+# Step 9: Login
+Username: admin
+Password: innovatehub2026
+
+═══════════════════════════════════════════════════════════════
+  EXPECTED RESULT: https://win-ai.innovatehub.site shows
+  Pareng Boyong with InnovateHub branding and valid SSL
+═══════════════════════════════════════════════════════════════
+
+Total time: 15-20 minutes
